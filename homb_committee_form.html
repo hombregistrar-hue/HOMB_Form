@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart of Mercy Ball - Executive Position Information Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #8B0000;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        
+        h2 {
+            color: #8B0000;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 22px;
+            font-weight: normal;
+        }
+        
+        h3 {
+            background-color: #8B0000;
+            color: white;
+            padding: 10px 15px;
+            margin: 30px 0 20px 0;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .required {
+            color: #8B0000;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+        }
+        
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .radio-group {
+            margin: 10px 0;
+        }
+        
+        .radio-group label {
+            display: inline;
+            font-weight: normal;
+            margin-left: 5px;
+            margin-right: 20px;
+        }
+        
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        
+        .vendor-section {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            background-color: #fafafa;
+        }
+        
+        .vendor-section h4 {
+            margin-bottom: 15px;
+            color: #8B0000;
+        }
+        
+        .add-vendor-btn,
+        .remove-vendor-btn {
+            background-color: #8B0000;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        
+        .remove-vendor-btn {
+            background-color: #dc3545;
+            margin-left: 10px;
+        }
+        
+        .add-vendor-btn:hover {
+            background-color: #660000;
+        }
+        
+        .remove-vendor-btn:hover {
+            background-color: #c82333;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #8B0000;
+        }
+        
+        .footer p {
+            text-align: center;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .submit-btn {
+            display: block;
+            width: 100%;
+            background-color: #8B0000;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .submit-btn:hover {
+            background-color: #660000;
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Heart of Mercy Ball</h1>
+        <h2>Executive Position Information Form</h2>
+        
+        <form id="committeeForm">
+            <h3>Executive Position Details</h3>
+            
+            <div class="form-group">
+                <label><span class="required">*</span> Name of Executive Position:</label>
+                <input type="text" name="committeeName" required>
+            </div>
+            
+            <div class="form-group">
+                <label><span class="required">*</span> Name and email addresses of Member(s) Reporting:</label>
+                <textarea name="members" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label><span class="required">*</span> Date of Report:</label>
+                <input type="date" name="reportDate" required>
+            </div>
+            
+            <div class="form-group">
+                <label>1. Purpose of Executive Position</label>
+                <p style="margin-bottom: 8px; color: #666;">Provide a summary of the executive position's purpose and responsibilities:</p>
+                <textarea name="purpose"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>2. Executive Position Structure</label>
+                <p style="margin-bottom: 8px; color: #666;">Does this job require a committee?</p>
+                <div class="radio-group">
+                    <input type="radio" id="requiresYes" name="requiresCommittee" value="yes">
+                    <label for="requiresYes">Yes</label>
+                    <input type="radio" id="requiresNo" name="requiresCommittee" value="no">
+                    <label for="requiresNo">No</label>
+                </div>
+                <label style="margin-top: 15px;">If yes, list committee members:</label>
+                <textarea name="committeeMembers"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>3. Timeline</label>
+                <p style="margin-bottom: 8px; color: #666;">Describe the timeline of how this job was performed (key steps, deadlines, phases):</p>
+                <textarea name="timeline"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>4. Outside Vendors</label>
+                <p style="margin-bottom: 8px; color: #666;">List any outside vendors used:</p>
+                <textarea name="vendors"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>5. Suggestions for Upcoming Year / Future Ideas</label>
+                <textarea name="suggestions"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>6. Other Committee(s) You Interact With</label>
+                <textarea name="interactions"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>7. Key Dates for Your Executive Position</label>
+                <textarea name="keyDates"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>8. Skills Needed for Your Executive Position</label>
+                <textarea name="skills"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>9. Tools Needed for Your Position</label>
+                <textarea name="tools"></textarea>
+            </div>
+            
+            <h3>10. Vendor Contact Information</h3>
+            
+            <div id="vendorContainer">
+                <div class="vendor-section">
+                    <h4>Vendor 1</h4>
+                    <div class="form-group">
+                        <label>Name:</label>
+                        <input type="text" name="vendorName[]">
+                    </div>
+                    <div class="form-group">
+                        <label>Company:</label>
+                        <input type="text" name="vendorCompany[]">
+                    </div>
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label>Phone:</label>
+                            <input type="text" name="vendorPhone[]">
+                        </div>
+                        <div class="form-group">
+                            <label>Email:</label>
+                            <input type="email" name="vendorEmail[]">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Notes:</label>
+                        <textarea name="vendorNotes[]" style="min-height: 60px;"></textarea>
+                    </div>
+                </div>
+            </div>
+            
+            <button type="button" class="add-vendor-btn" onclick="addVendor()">+ Add Another Vendor</button>
+            
+            <div class="form-group" style="margin-top: 30px;">
+                <label>11. General Comments</label>
+                <textarea name="comments"></textarea>
+            </div>
+            
+            <h3>Resources</h3>
+            <div class="form-group">
+                <label>Additional files (note filename):</label>
+                <textarea name="resources" style="min-height: 60px;"></textarea>
+            </div>
+            
+            <div class="footer">
+                <p><strong>Save Form as PDF and email to hombregistrar@gmail.com</strong></p>
+                <button type="button" class="submit-btn" onclick="saveAsPDF()">Save as PDF</button>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        let vendorCount = 1;
+        
+        function addVendor() {
+            vendorCount++;
+            const container = document.getElementById('vendorContainer');
+            const newVendor = document.createElement('div');
+            newVendor.className = 'vendor-section';
+            newVendor.innerHTML = `
+                <h4>Vendor ${vendorCount}</h4>
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input type="text" name="vendorName[]">
+                </div>
+                <div class="form-group">
+                    <label>Company:</label>
+                    <input type="text" name="vendorCompany[]">
+                </div>
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label>Phone:</label>
+                        <input type="text" name="vendorPhone[]">
+                    </div>
+                    <div class="form-group">
+                        <label>Email:</label>
+                        <input type="email" name="vendorEmail[]">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Notes:</label>
+                    <textarea name="vendorNotes[]" style="min-height: 60px;"></textarea>
+                </div>
+                <button type="button" class="remove-vendor-btn" onclick="removeVendor(this)">Remove Vendor</button>
+            `;
+            container.appendChild(newVendor);
+        }
+        
+        function removeVendor(button) {
+            button.parentElement.remove();
+            updateVendorNumbers();
+        }
+        
+        function updateVendorNumbers() {
+            const vendors = document.querySelectorAll('.vendor-section h4');
+            vendors.forEach((h4, index) => {
+                h4.textContent = `Vendor ${index + 1}`;
+            });
+            vendorCount = vendors.length;
+        }
+        
+        function saveAsPDF() {
+            alert('To save this form as PDF:\n\n1. Press Ctrl+P (Windows) or Cmd+P (Mac)\n2. Select "Save as PDF" as the destination\n3. Click Save\n4. Email the PDF to hombregistrar@gmail.com');
+            window.print();
+        }
+    </script>
+</body>
+</html>
